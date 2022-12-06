@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Test Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">Add</string>
+    <string name="price_per_item">Price per Item</string>
+    <string name="amount">Amount</string>
+    <string name="name">Name</string>
+    <string name="search_for_images">Search for Images...</string>
+    <string name="total_price_0_0">Total Price: 0.0€</string>
+    <string name="price_3">Price: 3€</string>
+    <string name="_3x">3x</string>
+    <string name="name2">NAME</string>
+</resources>
