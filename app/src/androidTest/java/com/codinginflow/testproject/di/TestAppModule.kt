@@ -19,7 +19,6 @@ object TestAppModule {
     fun provideInMemoryDb(
         @ApplicationContext context: Context
     ) = Room.inMemoryDatabaseBuilder(context, ShoppingItemDatabase::class.java)
-        .allowMainThreadQueries()
-        .build()
+        .allowMainThreadQueries().build()
 
 }

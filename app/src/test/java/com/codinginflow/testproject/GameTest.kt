@@ -10,8 +10,8 @@ import org.junit.Test
 
 internal class GameTest {
 
-    private lateinit var game : Game
-    private lateinit var question : MyQuestion
+    private lateinit var game: Game
+    private lateinit var question: MyQuestion
 
     @Before
     fun setup() {

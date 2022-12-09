@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import com.codinginflow.testproject.initial.ResourceCompare
 import com.google.common.truth.Truth.assertThat
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
@@ -15,11 +14,6 @@ internal class ResourceCompareTest {
     @Before
     fun setup() {
         resourceCompare = ResourceCompare()
-    }
-
-    @After
-    fun teardown() {
-
     }
 
     @Test

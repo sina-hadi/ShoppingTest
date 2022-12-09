@@ -8,8 +8,8 @@ import org.junit.Before
 
 internal class RegistrationUtilTest {
 
-    private lateinit var existingUsers : List<String>
-    private lateinit var registrationUtil : RegistrationUtil
+    private lateinit var existingUsers: List<String>
+    private lateinit var registrationUtil: RegistrationUtil
 
     @Before
     fun setup() {
@@ -20,9 +20,7 @@ internal class RegistrationUtilTest {
     @Test
     fun emptyUsername_ReturnFalse() {
         val result = registrationUtil.validateRegistrationInput(
-            "",
-            "123",
-            "123"
+            "", "123", "123"
         )
         assertTrue(result is LoginResult.Error)
     }
@@ -31,9 +29,7 @@ internal class RegistrationUtilTest {
     @Test
     fun shortPassword_ReturnFalse() {
         val result = registrationUtil.validateRegistrationInput(
-            "Philipp",
-            "1",
-            "1"
+            "Philipp", "1", "1"
         )
         assertTrue(result is LoginResult.Error)
     }
@@ -41,9 +37,7 @@ internal class RegistrationUtilTest {
     @Test
     fun emptyPassword_ReturnFalse() {
         val result = registrationUtil.validateRegistrationInput(
-            "Philipp",
-            "",
-            ""
+            "Philipp", "", ""
         )
         assertTrue(result is LoginResult.Error)
     }
@@ -51,9 +45,7 @@ internal class RegistrationUtilTest {
     @Test
     fun notValidRepeatedPassword_ReturnFalse() {
         val result = registrationUtil.validateRegistrationInput(
-            "Philipp",
-            "123",
-            "321"
+            "Philipp", "123", "321"
         )
         assertTrue(result is LoginResult.Error)
     }
@@ -61,9 +53,7 @@ internal class RegistrationUtilTest {
     @Test
     fun alreadyTakenUsername_ReturnFalse() {
         val result = registrationUtil.validateRegistrationInput(
-            "Carl",
-            "123",
-            "123"
+            "Carl", "123", "123"
         )
         assertTrue(result is LoginResult.Error)
     }
@@ -71,9 +61,7 @@ internal class RegistrationUtilTest {
     @Test
     fun validUsernameAndPassword_ReturnTrue() {
         val result = registrationUtil.validateRegistrationInput(
-            "Philipp",
-            "123",
-            "123"
+            "Philipp", "123", "123"
         )
         assertTrue(result is LoginResult.Success)
     }

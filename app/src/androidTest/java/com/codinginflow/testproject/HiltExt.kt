@@ -21,8 +21,7 @@ inline fun <reified T : Fragment> launchFragmentInHiltContainer(
 ) {
     val mainActivityIntent = Intent.makeMainActivity(
         ComponentName(
-            ApplicationProvider.getApplicationContext(),
-            HiltTestActivity::class.java
+            ApplicationProvider.getApplicationContext(), HiltTestActivity::class.java
         )
     )
 //        .putExtra("androidx.fragment.app.testing.FragmentScenario.EmptyFragmentActivity.THEME_EXTRAS_BUNDLE_KEY", themeResId)
@@ -32,13 +31,11 @@ inline fun <reified T : Fragment> launchFragmentInHiltContainer(
             activity.supportFragmentManager.fragmentFactory = it
         }
         val fragment = activity.supportFragmentManager.fragmentFactory.instantiate(
-            Preconditions.checkNotNull(T::class.java.classLoader),
-            T::class.java.name
+            Preconditions.checkNotNull(T::class.java.classLoader), T::class.java.name
         )
         fragment.arguments = fragmentArgs
 
-        activity.supportFragmentManager.beginTransaction()
-            .add(android.R.id.content, fragment, "")
+        activity.supportFragmentManager.beginTransaction().add(android.R.id.content, fragment, "")
             .commitNow()
 
         (fragment as T).action()

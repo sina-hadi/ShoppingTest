@@ -29,7 +29,7 @@ internal class ShoppingViewModelTest {
 
     @Test
     fun insertShoppingItemWithEmptyField_returnsError() {
-        viewModel.insertShoppingItem("name","","3.0")
+        viewModel.insertShoppingItem("name", "", "3.0")
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValue()
 
@@ -43,7 +43,7 @@ internal class ShoppingViewModelTest {
                 append(1)
             }
         }
-        viewModel.insertShoppingItem(string,"5","3.0")
+        viewModel.insertShoppingItem(string, "5", "3.0")
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValue()
 
@@ -57,7 +57,7 @@ internal class ShoppingViewModelTest {
                 append(1)
             }
         }
-        viewModel.insertShoppingItem("name","5",string)
+        viewModel.insertShoppingItem("name", "5", string)
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValue()
 
@@ -66,7 +66,7 @@ internal class ShoppingViewModelTest {
 
     @Test
     fun insertShoppingItemWithTooLongAmount_returnsError() {
-        viewModel.insertShoppingItem("name","3000000000","3.0")
+        viewModel.insertShoppingItem("name", "3000000000", "3.0")
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValue()
 
@@ -75,7 +75,7 @@ internal class ShoppingViewModelTest {
 
     @Test
     fun insertShoppingItemWithValidInput_returnsSuccess() {
-        viewModel.insertShoppingItem("name","5","3.0")
+        viewModel.insertShoppingItem("name", "5", "3.0")
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValue()
 

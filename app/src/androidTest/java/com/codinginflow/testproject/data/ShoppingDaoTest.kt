@@ -12,9 +12,11 @@ import com.codinginflow.testproject.getOrAwaitValue
 import com.codinginflow.testproject.launchFragmentInHiltContainer
 import com.codinginflow.testproject.ui.ShoppingFragment
 import com.codinginflow.testproject.ui.ShoppingFragment2
+import com.codinginflow.testproject.ui.ShoppingFragmentFactory
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
@@ -24,6 +26,7 @@ import org.junit.runner.RunWith
 import javax.inject.Inject
 import javax.inject.Named
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @SmallTest
 @HiltAndroidTest
 class ShoppingDaoTest {
@@ -48,13 +51,6 @@ class ShoppingDaoTest {
     @After
     fun teardown() {
         database.close()
-    }
-
-    @Test
-    fun testLaunchFragmentInHiltContainer() {
-        launchFragmentInHiltContainer<ShoppingFragment2> {
-
-        }
     }
 
     @Test

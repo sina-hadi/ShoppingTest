@@ -25,7 +25,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class ImagePickFragment @Inject constructor(
-    private val imageAdapter: ImageAdapter
+    val imageAdapter: ImageAdapter
 ) : Fragment() {
 
     lateinit var viewModel: ShoppingViewModel

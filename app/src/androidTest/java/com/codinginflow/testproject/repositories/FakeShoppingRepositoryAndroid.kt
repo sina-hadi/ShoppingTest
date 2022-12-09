@@ -6,7 +6,7 @@ import com.codinginflow.testproject.data.local.ShoppingItem
 import com.codinginflow.testproject.data.remote.responses.ImageResponse
 import com.codinginflow.testproject.util.Resource
 
-class FakeShoppingRepository : ShoppingRepository {
+class FakeShoppingRepositoryAndroid : ShoppingRepository {
 
     private val shoppingItems = mutableListOf<ShoppingItem>()
 
