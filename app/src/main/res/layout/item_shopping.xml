@@ -6,11 +6,14 @@
     android:layout_height="wrap_content"
     android:padding="16dp">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivShoppingImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/purple_200"
+        app:shapeAppearance="@style/round_corner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

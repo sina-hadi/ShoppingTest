@@ -62,7 +62,9 @@ class AddShoppingFragment @Inject constructor(
 
     private fun subscribeToObservers() {
         viewModel.curImageUrl.observe(viewLifecycleOwner, Observer {
-            glide.load(it).into(binding.ivShoppingImage)
+            glide
+                .load(it)
+                .into(binding.ivShoppingImage)
         })
         viewModel.insertShoppingItemStatus.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let { result ->
